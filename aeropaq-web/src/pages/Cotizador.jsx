@@ -19,20 +19,27 @@ function Cotizador() {
   const [resultado, setResultado] = useState(null);
 
   const cajas = [
-    { nombre: "Pequeña", factor: 1 },
-    { nombre: "Mediana", factor: 1.2 },
-    { nombre: "Grande", factor: 1.5 },
-    { nombre: "Extra grande", factor: 2 }
+    { nombre: "Pequeña", factor: 1, descripcion: "Ideal para paquetes livianos y pequeños" },
+    { nombre: "Mediana", factor: 1.2, descripcion: "Para artículos de tamaño medio" },
+    { nombre: "Grande", factor: 1.5, descripcion: "Para paquetes más amplios" },
+    { nombre: "Extra grande", factor: 2, descripcion: "Para artículos voluminosos" }
   ];
 
   const agregarPaquete = () => {
     const nuevoPaquete = {
-      id: paquetes.length + 1,
+      id: Date.now(),
       peso: "",
       caja: ""
     };
 
     setPaquetes([...paquetes, nuevoPaquete]);
+  };
+
+  const eliminarPaquete = (id) => {
+    if (paquetes.length === 1) return;
+
+    const nuevosPaquetes = paquetes.filter((paq) => paq.id !== id);
+    setPaquetes(nuevosPaquetes);
   };
 
   const actualizarPeso = (id, peso) => {
@@ -66,10 +73,7 @@ function Cotizador() {
     if (origen === "misma-ciudad" && destino === "misma-ciudad") {
       costoBase = 15;
       tiempo = servicio === "expres" ? "24 horas" : "1 a 2 días";
-    } else if (
-      origen === "misma-ciudad" &&
-      destino === "otro-departamento"
-    ) {
+    } else if (destino === "otro-departamento") {
       costoBase = 25;
       tiempo = servicio === "expres" ? "1 a 2 días" : "2 a 4 días";
     } else if (destino === "internacional") {
@@ -91,10 +95,7 @@ function Cotizador() {
 
     if (extras.recoleccion) costoExtras += 10;
     if (extras.seguro) costoExtras += 15;
-
-    if (servicio === "expres") {
-      costoBase += 20;
-    }
+    if (servicio === "expres") costoBase += 20;
 
     const total = costoBase + costoPeso + costoCaja + costoExtras;
 
@@ -189,10 +190,22 @@ function Cotizador() {
             </button>
           </div>
 
-          {paquetes.map((paquete) => (
+          {paquetes.map((paquete, index) => (
             <section className="cotizador__paquete" key={paquete.id}>
-              <div className="cotizador__paquete-header">
-                Paquete no: {paquete.id}
+              <div className="cotizador__paquete-top">
+                <div className="cotizador__paquete-header">
+                  Paquete no: {index + 1}
+                </div>
+
+                {paquetes.length > 1 && (
+                  <button
+                    type="button"
+                    className="cotizador__eliminar"
+                    onClick={() => eliminarPaquete(paquete.id)}
+                  >
+                    Eliminar
+                  </button>
+                )}
               </div>
 
               <div className="cotizador__peso-individual">
@@ -214,7 +227,8 @@ function Cotizador() {
                     }`}
                     onClick={() => seleccionarCaja(paquete.id, caja.nombre)}
                   >
-                    <p>{caja.nombre}</p>
+                    <h4>{caja.nombre}</h4>
+                    <p>{caja.descripcion}</p>
                   </div>
                 ))}
               </div>

@@ -36,10 +36,6 @@
   flex-wrap: wrap;
 }
 
-.cotizador__peso {
-  margin-bottom: 20px;
-}
-
 .cotizador__actions {
   display: flex;
   justify-content: flex-end;
@@ -47,7 +43,8 @@
 }
 
 .cotizador__actions button,
-.cotizador__btn {
+.cotizador__btn,
+.cotizador__eliminar {
   padding: 10px 20px;
   cursor: pointer;
 }
@@ -58,11 +55,30 @@
   margin-bottom: 24px;
 }
 
+.cotizador__paquete-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
 .cotizador__paquete-header {
   display: inline-block;
   padding: 6px 12px;
   border: 1px solid #999;
-  margin-bottom: 16px;
+}
+
+.cotizador__peso-individual {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.cotizador__peso-individual input {
+  padding: 12px;
+  font-size: 1rem;
 }
 
 .cotizador__cards {
@@ -75,8 +91,31 @@
   min-height: 160px;
   border: 1px solid #999;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  padding: 16px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.cotizador__card:hover {
+  transform: scale(1.02);
+}
+
+.cotizador__card.seleccionada {
+  border: 2px solid #222;
+  font-weight: bold;
+}
+
+.cotizador__card h4 {
+  margin-bottom: 10px;
+}
+
+.cotizador__card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .cotizador__center {
@@ -99,5 +138,11 @@
 
   .cotizador__cards {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .cotizador__paquete-top {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
   }
 }

@@ -1,10 +1,10 @@
 function Footer() {
   return (
     <footer className="footer">
-      <div>LOGO</div>
-      <div>Footer</div>
+      <div>AeroPaq</div>
+      <div>Servicios</div>
       <div>Redes sociales</div>
-      <div>Footer</div>
+      <div>Contacto</div>
     </footer>
   );
 }

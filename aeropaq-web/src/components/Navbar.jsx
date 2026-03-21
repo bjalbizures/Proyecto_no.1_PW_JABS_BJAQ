@@ -7,10 +7,10 @@ function Navbar() {
       <div className="navbar__logo">LOGO</div>
 
       <nav className="navbar__menu">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#cobertura">Cobertura</a>
-        <a href="#contacto">Contacto</a>
+        <a href="/#inicio">Inicio</a>
+        <a href="/#servicios">Servicios</a>
+        <a href="/#cobertura">Cobertura</a>
+        <a href="/#contacto">Contacto</a>
         <Link to="/cotizador" className="navbar__btn">Cotizar</Link>
       </nav>
     </header>

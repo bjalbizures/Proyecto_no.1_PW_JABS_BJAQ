@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import InfoSection from "../components/InfoSection";
 import ContactoForm from "../components/ContactoForm";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 import "../styles/home.css";
 
 function Home() {

@@ -9,27 +9,11 @@ export default function Home() {
     <main className="home">
       <Hero />
 
-      <ServicesSection
-        id="servicios"
-        titulo="Nuestros servicios"
-        texto="Ofrecemos envios nacionales, internacionales, recoleccion a domicilio y servicio expres para que puedas elegir la opcion que mejor se adapte a tus necesidades."
-        imagen="/nuestrosServicios.png"
-      />
+      <ServicesSection id="servicios" />
 
-      <CoverageSection
-        id="cobertura"
-        titulo="Cobertura"
-        texto="Contamos con cobertura en distintas ciudades, departamentos y destinos internacionales, buscando brindar un servicio confiable y de amplio alcance."
-        reverse={true}
-        imagen="/cobertura.png"
-      />
+      <CoverageSection id="cobertura" reverse={true} />
 
-      <ProcessSection
-        id="como-funciona"
-        titulo="Como funciona?"
-        texto="El proceso es simple: coordinas el envio, preparamos la recoleccion, despachamos tu paquete y acompanamos la entrega hasta el destino final."
-        imagen="/comoFunciona.png"
-      />
+      <ProcessSection id="como-funciona" />
     </main>
   );
 }

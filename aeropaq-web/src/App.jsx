@@ -6,11 +6,13 @@ import FAQ from "./pages/faq";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 import { APP_ROUTES } from "./constants/routes";
 
 export default function App() {
   return (
    <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path={APP_ROUTES.HOME} element={<Home />} />

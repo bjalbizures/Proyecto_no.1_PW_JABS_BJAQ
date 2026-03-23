@@ -1,43 +1,49 @@
 import ExpandableDetailsSection from "./ExpandableDetailsSection";
 
+const sectionContent = {
+  title: "¿Cómo funciona?",
+  text: "El proceso es simple: coordinas tu envío, realizamos la recolección, despachamos el paquete y damos seguimiento hasta su entrega final.",
+  image: "/comoFunciona.png",
+};
+
 const processSteps = [
   {
     id: 1,
-    title: "Solicitud del envio",
+    title: "Solicitud del envío",
     meta: "Paso 1",
     description:
-      "El cliente registra los datos del remitente, destinatario, tipo de paquete y modalidad de entrega para iniciar el proceso.",
+      "Registras la información del remitente, destinatario, tipo de paquete y modalidad de entrega para iniciar el proceso.",
   },
   {
     id: 2,
-    title: "Recoleccion y verificacion",
+    title: "Recolección y verificación",
     meta: "Paso 2",
     description:
-      "Se recoge el paquete en domicilio o sucursal y se valida que el embalaje, peso y documentacion esten listos para despacho.",
+      "Recogemos el paquete en tu domicilio o lo recibimos en sucursal, verificando que esté listo para su envío.",
   },
   {
     id: 3,
-    title: "Clasificacion y despacho",
+    title: "Clasificación y despacho",
     meta: "Paso 3",
     description:
-      "El envio se clasifica segun su destino y prioridad para asignarlo a la ruta logistica mas eficiente y segura.",
+      "Organizamos el envío según su destino y prioridad para asignarlo a la ruta más adecuada y segura.",
   },
   {
     id: 4,
     title: "Seguimiento y entrega",
     meta: "Paso 4",
     description:
-      "Durante el trayecto puedes consultar el estado del paquete hasta su entrega final al destinatario.",
+      "Puedes consultar el estado de tu paquete durante el trayecto hasta que sea entregado en su destino final.",
   },
 ];
 
-export default function ProcessSection({ id, titulo, texto, imagen, reverse }) {
+export default function ProcessSection({ id, reverse }) {
   return (
     <ExpandableDetailsSection
       id={id}
-      titulo={titulo}
-      texto={texto}
-      imagen={imagen}
+      titulo={sectionContent.title}
+      texto={sectionContent.text}
+      imagen={sectionContent.image}
       reverse={reverse}
       items={processSteps}
       expandButtonLabel="Ver proceso completo"

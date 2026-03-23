@@ -26,6 +26,11 @@
   opacity: 0.5;
 }
 
+.footer-link--active {
+  color: var(--color-background);
+  opacity: 0.6;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .footer {

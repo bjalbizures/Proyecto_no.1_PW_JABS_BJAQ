@@ -1,41 +1,52 @@
+/* ========================================
+   COTIZADOR PAGE STYLES
+   ======================================== */
+
 .cotizador-page {
-  padding: 30px;
+  padding: var(--spacing-2xl);
+  background: var(--color-background);
+  min-height: calc(100vh - 200px);
 }
 
 .cotizador {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: var(--spacing-2xl);
   box-shadow: var(--shadow-soft);
+  max-width: var(--max-width-container);
+  margin: 0 auto;
 }
 
+/* FORM FIELDS */
 .cotizador__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-bottom: 24px;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .cotizador__field {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--spacing-sm);
 }
 
 .cotizador__field label {
-  font-weight: 700;
-  color: var(--color-text);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+  font-size: var(--font-size-sm);
 }
 
 .cotizador__field select,
 .cotizador__field input {
-  padding: 14px;
-  font-size: 1rem;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
   border: 1px solid var(--color-border);
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   background: var(--color-surface);
-  color: var(--color-text);
+  color: var(--color-text-main);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .cotizador__field select:focus,
@@ -43,48 +54,62 @@
 .cotizador__peso-individual input:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.12);
+  box-shadow: 0 0 0 3px rgba(215, 38, 38, 0.12);
 }
 
+/* GROUP - RADIO BUTTONS */
 .cotizador__group {
   border: 1px solid var(--color-border);
-  border-radius: 14px;
-  background: #fffdfd;
-  padding: 18px;
-  margin-bottom: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-light);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
   display: flex;
-  gap: 24px;
+  gap: var(--spacing-xl);
   align-items: center;
   flex-wrap: wrap;
 }
 
 .cotizador__group p {
   margin: 0;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--color-primary);
+  font-size: var(--font-size-sm);
 }
 
+.cotizador__group label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-text-main);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}
+
+.cotizador__group input[type="radio"],
+.cotizador__group input[type="checkbox"] {
+  cursor: pointer;
+}
+
+/* ACTIONS BUTTONS */
 .cotizador__actions {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 20px;
-}
-
-.cotizador__actions button,
-.cotizador__btn,
-.cotizador__eliminar {
-  border: none;
-  border-radius: 10px;
-  padding: 11px 20px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-md);
 }
 
 .cotizador__actions button,
 .cotizador__btn {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: background-color var(--transition-base), transform var(--transition-base);
   background: var(--color-primary);
-  color: #fff;
+  color: white;
+  font-size: var(--font-size-sm);
 }
 
 .cotizador__actions button:hover,
@@ -94,70 +119,84 @@
 }
 
 .cotizador__eliminar {
-  background: #2b2b2b;
-  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  background: var(--color-text-main);
+  color: white;
+  font-size: var(--font-size-sm);
+  transition: background-color var(--transition-base), transform var(--transition-base);
 }
 
 .cotizador__eliminar:hover {
-  background: #111;
+  background: #1a1a1a;
   transform: translateY(-1px);
 }
 
+/* PAQUETES */
 .cotizador__paquete {
   border: 1px solid var(--color-border);
-  background: #fcfcfc;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 24px;
+  background: var(--color-background);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
 }
 
 .cotizador__paquete-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-md);
 }
 
 .cotizador__paquete-header {
   display: inline-block;
-  padding: 8px 14px;
+  padding: var(--spacing-sm) var(--spacing-lg);
   border: 1px solid var(--color-border);
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   background: var(--color-surface);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--color-primary);
+  font-size: var(--font-size-sm);
 }
 
+/* PESO INDIVIDUAL */
 .cotizador__peso-individual {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
   max-width: 320px;
 }
 
 .cotizador__peso-individual label {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+  font-size: var(--font-size-sm);
 }
 
 .cotizador__peso-individual input {
-  padding: 14px;
-  font-size: 1rem;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
   border: 1px solid var(--color-border);
-  border-radius: 10px;
+  border-radius: var(--radius-md);
 }
 
+/* CAJAS - CARDS GRID */
 .cotizador__cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: var(--spacing-lg);
 }
 
 .cotizador__card {
   min-height: 180px;
   border: 1px solid var(--color-border);
-  border-radius: 14px;
-  background: white;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
 
   display: flex;
   flex-direction: column;
@@ -165,9 +204,9 @@
   justify-content: center;
 
   cursor: pointer;
-  padding: 16px;
+  padding: var(--spacing-lg);
 
-  transition: 0.2s;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base), background-color var(--transition-base);
 }
 
 .cotizador__card:hover {
@@ -177,85 +216,108 @@
 
 .cotizador__card.seleccionada {
   border: 2px solid var(--color-primary);
-  background: #fff0f0;
+  background: var(--color-primary-light);
 }
 
 .cotizador__card h4 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-lg);
   color: var(--color-primary);
 }
 
 .cotizador__card p {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-soft);
+  text-align: center;
 }
 
+/* RESULTADO */
 .cotizador__center {
   display: flex;
   justify-content: center;
-  margin: 30px 0;
+  margin: var(--spacing-3xl) 0;
 }
 
 .cotizador__resultado {
   max-width: 460px;
-  margin: 0 auto;
+  width: 100%;
   border: 1px solid var(--color-border);
-  border-radius: 16px;
+  border-radius: var(--radius-xl);
   background: var(--color-surface);
-  padding: 24px;
+  padding: var(--spacing-2xl);
   box-shadow: var(--shadow-soft);
 }
 
 .cotizador__resultado h3 {
   margin-top: 0;
   color: var(--color-primary);
-  font-size: 1.8rem;
+  font-size: var(--font-size-2xl);
   text-align: center;
-  margin-bottom: 18px;
+  margin-bottom: var(--spacing-lg);
 }
 
 .cotizador__resultado p {
-  margin: 10px 0;
-  color: var(--color-text);
-  line-height: 1.6;
+  margin: var(--spacing-md) 0;
+  color: var(--color-text-main);
+  line-height: var(--line-height-relaxed);
 }
 
+/* RESPONSIVE - TABLET */
 @media (max-width: 900px) {
   .cotizador__cards {
     grid-template-columns: 1fr 1fr;
   }
 }
 
+/* RESPONSIVE - MOBILE */
 @media (max-width: 768px) {
   .cotizador-page {
-    padding: 20px;
+    padding: var(--spacing-lg);
   }
 
   .cotizador {
-    padding: 20px;
+    padding: var(--spacing-lg);
   }
 
   .cotizador__row {
     grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
   }
 
   .cotizador__group {
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .cotizador__group p {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
   }
 
   .cotizador__paquete-top {
     flex-direction: column;
-    gap: 12px;
     align-items: flex-start;
+  }
+
+  .cotizador__actions {
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .cotizador__actions button,
+  .cotizador__btn {
+    width: 100%;
   }
 }
 
 @media (max-width: 520px) {
   .cotizador__cards {
     grid-template-columns: 1fr;
+  }
+
+  .cotizador {
+    padding: var(--spacing-md);
   }
 }

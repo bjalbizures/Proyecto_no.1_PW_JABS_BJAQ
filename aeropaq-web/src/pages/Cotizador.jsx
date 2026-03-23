@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
 import "../styles/cotizador.css";
 
 function Cotizador() {
@@ -111,10 +110,7 @@ function Cotizador() {
   };
 
   return (
-    <>
-      <Navbar />
-
-      <main className="cotizador-page">
+    <main className="cotizador-page">
         <section className="cotizador">
           <div className="cotizador__row">
             <div className="cotizador__field">
@@ -253,7 +249,6 @@ function Cotizador() {
           )}
         </section>
       </main>
-    </>
   );
 }
 

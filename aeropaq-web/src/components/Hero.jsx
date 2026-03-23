@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 
-function Hero() {
+export default function Hero() {
   return (
     <section className="hero" id="inicio">
-      <div className="hero__image-placeholder">
-        Imagen principal
-      </div>
+      <img src="/main.png" alt="Envíos AeroPaq" className="hero__image" />
 
       <div className="hero__content">
         <h1>Envíos rápidos y seguros</h1>
@@ -21,5 +19,3 @@ function Hero() {
     </section>
   );
 }
-
-export default Hero;

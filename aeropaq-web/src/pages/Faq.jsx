@@ -1,6 +1,6 @@
 import "../styles/faq.css";
 
-export default function FAQ() {
+export default function Faq() {
   const faqs = [
     {
       id: 1,

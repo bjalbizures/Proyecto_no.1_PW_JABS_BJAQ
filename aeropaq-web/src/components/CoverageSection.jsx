@@ -2,7 +2,7 @@ import ExpandableDetailsSection from "./ExpandableDetailsSection";
 
 const sectionContent = {
   title: "Cobertura",
-  text: "Llegamos a diferentes ciudades, departamentos y destinos internacionales para brindarte un servicio confiable, accesible y de amplio alcance.",
+  text: "Contamos con cobertura en distintas ciudades y departamentos del país, además de envíos hacia Centroamérica y México, para brindarte un servicio confiable y de amplio alcance.",
   image: "/cobertura.png",
 };
 
@@ -11,7 +11,7 @@ const coverageAreas = [
     id: 1,
     title: "Zona urbana",
     meta: "Ciudades principales",
-    description: "Contamos con cobertura en las principales ciudades del país para ofrecer entregas rápidas y seguras.",
+    description: "Tenemos presencia en las principales ciudades del país para ofrecer entregas rápidas y seguras.",
   },
   {
     id: 2,
@@ -21,9 +21,9 @@ const coverageAreas = [
   },
   {
     id: 3,
-    title: "Mercados internacionales",
-    meta: "Múltiples destinos",
-    description: "Conectamos tus envíos con distintos países mediante un servicio confiable y eficiente.",
+    title: "Centroamérica y México",
+    meta: "Cobertura regional",
+    description: "Conectamos tus envíos con distintos destinos de Centroamérica y México mediante un servicio confiable y eficiente.",
   },
   {
     id: 4,

@@ -1,5 +1,7 @@
 import Hero from "../components/Hero";
-import InfoSection from "../components/InfoSection";
+import ServicesSection from "../components/ServicesSection";
+import CoverageSection from "../components/CoverageSection";
+import ProcessSection from "../components/ProcessSection";
 import "../styles/home.css";
 
 export default function Home() {
@@ -7,14 +9,14 @@ export default function Home() {
     <main className="home">
       <Hero />
 
-      <InfoSection
+      <ServicesSection
         id="servicios"
         titulo="Nuestros servicios"
-        texto="Ofrecemos envíos nacionales, internacionales, recolección a domicilio y servicio exprés para que puedas elegir la opción que mejor se adapte a tus necesidades."
+        texto="Ofrecemos envios nacionales, internacionales, recoleccion a domicilio y servicio expres para que puedas elegir la opcion que mejor se adapte a tus necesidades."
         imagen="/nuestrosServicios.png"
       />
 
-      <InfoSection
+      <CoverageSection
         id="cobertura"
         titulo="Cobertura"
         texto="Contamos con cobertura en distintas ciudades, departamentos y destinos internacionales, buscando brindar un servicio confiable y de amplio alcance."
@@ -22,10 +24,10 @@ export default function Home() {
         imagen="/cobertura.png"
       />
 
-      <InfoSection
+      <ProcessSection
         id="como-funciona"
-        titulo="¿Cómo funciona?"
-        texto="El proceso es simple: el cliente solicita el envío, se realiza la recolección, se despacha el paquete y finalmente se entrega al destinatario."
+        titulo="Como funciona?"
+        texto="El proceso es simple: coordinas el envio, preparamos la recoleccion, despachamos tu paquete y acompanamos la entrega hasta el destino final."
         imagen="/comoFunciona.png"
       />
     </main>

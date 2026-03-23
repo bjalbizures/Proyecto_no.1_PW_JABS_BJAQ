@@ -13,8 +13,9 @@
   flex-direction: column;
   gap: var(--spacing-2xl);
   padding: var(--spacing-4xl) var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
   background: var(--color-surface);
-  border-bottom: 5px solid var(--color-border);
+  border-bottom: 5px solid var(--color-border) ;
 }
 
 .hero__image {
@@ -60,58 +61,9 @@
   transform: translateY(-2px);
 }
 
-/* INFO SECTION */
-.info-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-3xl);
-  padding: var(--spacing-4xl) var(--spacing-xl);
-  background: var(--color-background);
-  align-items: stretch;
-}
-
-.info-section.reverse {
-  direction: rtl;
-}
-
-.info-section.reverse > * {
-  direction: ltr;
-}
-
-.info-section__image {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
-  box-shadow: var(--shadow-soft);
-  object-fit: cover;
-  justify-self: center;
-  align-self: center;
-}
-
-.info-section__text {
-  background: var(--color-surface);
-  padding: var(--spacing-2xl);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.info-section__text h2 {
-  color: var(--color-primary);
-  font-size: var(--font-size-3xl);
-  margin-bottom: var(--spacing-lg);
-}
-
-.info-section__text p {
-  line-height: var(--line-height-loose);
-  color: var(--color-text-soft);
-}
-
-/* RESPONSIVE - TABLET */
+/* =============================================
+   RESPONSIVE - TABLET
+   ============================================= */
 @media (max-width: 1024px) {
   .hero {
     padding: var(--spacing-3xl) var(--spacing-lg);
@@ -121,17 +73,11 @@
     font-size: var(--font-size-4xl);
   }
 
-  .info-section {
-    gap: var(--spacing-2xl);
-    padding: var(--spacing-3xl) var(--spacing-lg);
-  }
-
-  .info-section__text h2 {
-    font-size: var(--font-size-2xl);
-  }
 }
 
-/* RESPONSIVE - MOBILE */
+/* =============================================
+   RESPONSIVE - MOBILE
+   ============================================= */
 @media (max-width: 768px) {
   .hero {
     padding: var(--spacing-2xl) var(--spacing-lg);
@@ -142,27 +88,4 @@
     font-size: var(--font-size-3xl);
   }
 
-  .info-section {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-2xl);
-    padding: var(--spacing-2xl) var(--spacing-lg);
-  }
-
-  .info-section.reverse {
-    direction: ltr;
-  }
-
-  .info-section__image {
-    height: 240px;
-    order: 2;
-  }
-
-  .info-section__text {
-    padding: var(--spacing-lg);
-    order: 1;
-  }
-
-  .info-section__text h2 {
-    font-size: var(--font-size-2xl);
-  }
 }

@@ -112,6 +112,7 @@
 }
 
 .expandable-info-section__expanded-zone {
+  grid-column: 1 / -1;
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -185,7 +186,7 @@
 
   .expandable-info-section__media {
     padding: var(--spacing-lg);
-    order: 2;
+    order: 1;
   }
 
   .expandable-info-section__image {
@@ -194,7 +195,12 @@
 
   .expandable-info-section__content {
     padding: var(--spacing-lg);
-    order: 1;
+    order: 2;
+  }
+
+  .expandable-info-section__expanded-zone {
+    order: 3;
+    grid-column: auto;
   }
 
   .expandable-info-section__text h2 {

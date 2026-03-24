@@ -64,14 +64,14 @@ export default function ExpandableInfoSection({
             </svg>
           </button>
         </div>
-      </div>
 
-      {/* CONTENEDOR EXPANDIBLE */}
-      {expandedContent && (
-        <div className="expandable-info-section__expanded-zone">
-          <div className="expandable-info-section__expanded-inner">{expandedContent}</div>
-        </div>
-      )}
+        {/* CONTENEDOR EXPANDIBLE */}
+        {expandedContent && (
+          <div className="expandable-info-section__expanded-zone">
+            <div className="expandable-info-section__expanded-inner">{expandedContent}</div>
+          </div>
+        )}
+      </div>
     </section>
   );
 }
